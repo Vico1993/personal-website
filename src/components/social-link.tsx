@@ -5,19 +5,17 @@ import { PALETTE } from "@zendeskgarden/react-theming";
 
 interface SocialLinkProps {
     icon: JSX.Element;
-    link: string;
     label: string;
+    link?: string;
 }
 
 const SpanStyled = styled.span({
-    border: `1px solid ${PALETTE.grey[400]}`,
     borderRadius: "20px",
-    padding: "5px 10px",
-    margin: "0px 5px",
+    margin: "20px 0px",
+    display: "block",
 });
 
 const AnchorStyled = styled(Anchor)({
-    marginLeft: "5px",
     color: PALETTE.black,
 
     ":hover": {
@@ -29,10 +27,14 @@ const AnchorStyled = styled(Anchor)({
 export default function SocialLink({ icon, label, link }: SocialLinkProps) {
     return (
         <SpanStyled>
-            {icon}
-            <AnchorStyled href={link} target="_blank">
-                {label}
-            </AnchorStyled>
+            {icon}{" "}
+            {link ? (
+                <AnchorStyled href={link} target="_blank">
+                    {label}
+                </AnchorStyled>
+            ) : (
+                label
+            )}
         </SpanStyled>
     );
 }

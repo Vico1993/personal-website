@@ -6,43 +6,99 @@ import { Col, Grid, Row } from "@zendeskgarden/react-grid";
 import XIcon from "@zendeskgarden/svg-icons/src/16/twitter-fill.svg?react";
 import LinkedinIcon from "@zendeskgarden/svg-icons/src/16/linkedin-fill.svg?react";
 import GithubinIcon from "@zendeskgarden/svg-icons/src/16/github-fill.svg?react";
+import MailIcon from "@zendeskgarden/svg-icons/src/16/email-fill.svg?react";
+import { XL, LG, MD } from "@zendeskgarden/react-typography";
+import { PALETTE } from "@zendeskgarden/react-theming";
 
 import SocialLink from "../components/social-link";
-import { XL, XXL, XXXL } from "@zendeskgarden/react-typography";
+
+const StyledGrid = styled(Grid)({
+    fontFamily: "monospace",
+    maxWidth: "1100px",
+});
 
 const StyledRow = styled(Row)({
-    marginBottom: "20px",
+    marginBottom: "40px",
+});
+
+const StyledH1 = styled.h1({
+    fontSize: "30px",
+    marginBottom: "0px",
+});
+
+const SVGStyle: CSSProperties = {
+    display: "inline-block",
+    verticalAlign: "text-top",
+    color: PALETTE.orange["400"],
+};
+
+const DescriptionLineRow = styled(Row)({
+    marginBottom: "10px",
+
+    "&:.last": {
+        marginBottom: "40px",
+    },
 });
 
 export default function Index() {
     // Retrieve current year for the footer
     const currentYear = new Date().getFullYear();
 
-    const SVGStyle: CSSProperties = {
-        display: "inline-block",
-        verticalAlign: "text-top",
-    };
+    const descriptionLines: JSX.Element[] = [
+        <>
+            Driven by a boundless{" "}
+            <b style={{ color: PALETTE.orange["400"] }}>curiosity</b> and a
+            hunger for <b style={{ color: PALETTE.orange["400"] }}>growth</b>,
+        </>,
+        <>
+            I thrive on the challenge of pushing boundaries and exploring new
+            horizons.
+        </>,
+        <>
+            Committed to leaving a lasting impact through{" "}
+            <b style={{ color: PALETTE.orange["400"] }}>technology</b> and{" "}
+            <b style={{ color: PALETTE.orange["400"] }}>entrepreneurship</b>,
+        </>,
+        <>
+            I embrace each opportunity as a stepping stone towards my vision of{" "}
+            <b style={{ color: PALETTE.orange["400"] }}>success</b>.
+        </>,
+    ];
 
     return (
-        <Grid>
+        <StyledGrid>
             <StyledRow>
-                <Col textAlign="center">
-                    <h1>Victor Piolin</h1>
+                <Col>
+                    <StyledH1>Victor Piolin</StyledH1>
                 </Col>
             </StyledRow>
-            <StyledRow>
-                <Col textAlign="center">
-                    <XXXL>
-                        Fools learn from experience.
-                        <br />
-                        I prefer to learn from the experience of others.
-                        <br />
-                    </XXXL>
-                    <XL style={{ marginTop: "10px" }}>Otto von bismarck</XL>
+            {descriptionLines.map((line, index) => (
+                <DescriptionLineRow
+                    className="description-line"
+                    style={
+                        index + 1 === descriptionLines.length
+                            ? { marginBottom: "40px" }
+                            : {}
+                    }
+                >
+                    <Col>
+                        <XL>{line}</XL>
+                    </Col>
+                </DescriptionLineRow>
+            ))}
+            <StyledRow className="quote" style={{ fontStyle: "italic" }}>
+                <Col>
+                    <MD style={{ marginBottom: "10px" }}>
+                        Otto von bismarck:{" "}
+                    </MD>
+                    <LG>
+                        Fools learn from experience. I prefer to learn from the
+                        experience of others.
+                    </LG>
                 </Col>
             </StyledRow>
             <StyledRow className="social-network">
-                <Col textAlign="center">
+                <Col>
                     <SocialLink
                         icon={<XIcon style={SVGStyle} />}
                         link="https://github.com/Vico1993"
@@ -58,11 +114,21 @@ export default function Index() {
                         link="https://www.linkedin.com/in/victor-piolin-77322091/"
                         label="@VPiolin"
                     />
+                    <SocialLink
+                        icon={<MailIcon style={SVGStyle} />}
+                        link=""
+                        label="victor.piolin@gmail.com"
+                    />
                 </Col>
             </StyledRow>
             <StyledRow className="footer">
-                <Col textAlign="center">© {currentYear} Victor Piolin</Col>
+                <Col>
+                    © {currentYear}{" "}
+                    <span style={{ color: PALETTE.orange["400"] }}>
+                        Victor Piolin
+                    </span>
+                </Col>
             </StyledRow>
-        </Grid>
+        </StyledGrid>
     );
 }
