@@ -16,14 +16,14 @@
         "@zendeskgarden/svg-icons": "^7.1.0",
         "localforage": "^1.10.0",
         "match-sorter": "^6.3.4",
-        "react": "^18.2.0",
+        "react": "^18.3.1",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.22.0",
         "sort-by": "^1.2.0",
         "styled-components": "^5.3.11"
     },
     "devDependencies": {
-        "@types/react": "^18.2.55",
+        "@types/react": "^18.3.2",
         "@types/react-dom": "^18.2.19",
         "@types/styled-components": "^5.1.34",
         "@vitejs/plugin-react": "^4.2.1",
