@@ -1,8 +1,7 @@
-# Basic react repo
+# Victor Piolin
 
-This repo is my basic setup for a simple react application.
-It's setup using Vite + react router.
-I followed [react-router](https://reactrouter.com/en/main/start/tutorial) tutorial
+This repo contain my personal website hosts at [victorpiolin.com](https://www.victorpiolin.com/).
+It's a basic React project
 
 ## Basic NPM command
 
@@ -23,3 +22,7 @@ npm run dev
 ```Shell
 npm run lint
 ```
+
+## Edit content
+
+For now the content is in [index.tsx](src/page/index.tsx), maybe one day we could use tools like [Contentful](https://www.contentful.com/)
