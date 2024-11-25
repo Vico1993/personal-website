@@ -101,13 +101,13 @@ export default function Index() {
                 <Col>
                     <SocialLink
                         icon={<XIcon style={SVGStyle} />}
-                        link="https://github.com/Vico1993"
-                        label="@Vico1993"
+                        link="https://twitter.com/VPiolin"
+                        label="@VPiolin"
                     />
                     <SocialLink
                         icon={<GithubinIcon style={SVGStyle} />}
-                        link="https://twitter.com/VPiolin"
-                        label="@VPiolin"
+                        link="https://github.com/Vico1993"
+                        label="@Vico1993"
                     />
                     <SocialLink
                         icon={<LinkedinIcon style={SVGStyle} />}
