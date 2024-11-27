@@ -1,23 +1,22 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-import React, { CSSProperties } from "react";
+import { CSSProperties, ReactElement } from "react";
 import styled from "styled-components";
-import { Col, Grid, Row } from "@zendeskgarden/react-grid";
+import { Grid } from "@zendeskgarden/react-grid";
 import XIcon from "@zendeskgarden/svg-icons/src/16/twitter-fill.svg?react";
 import LinkedinIcon from "@zendeskgarden/svg-icons/src/16/linkedin-fill.svg?react";
 import GithubinIcon from "@zendeskgarden/svg-icons/src/16/github-fill.svg?react";
 import MailIcon from "@zendeskgarden/svg-icons/src/16/email-fill.svg?react";
 import { XL, LG, MD } from "@zendeskgarden/react-typography";
 import { PALETTE } from "@zendeskgarden/react-theming";
-
-import SocialLink from "../components/social-link";
+import SocialLink from "@/components/social-link";
 
 const StyledGrid = styled(Grid)({
     fontFamily: "monospace",
     maxWidth: "1100px",
 });
 
-const StyledRow = styled(Row)({
+const StyledRow = styled(Grid.Row)({
     marginBottom: "40px",
 });
 
@@ -32,7 +31,7 @@ const SVGStyle: CSSProperties = {
     color: PALETTE.orange["400"],
 };
 
-const DescriptionLineRow = styled(Row)({
+const DescriptionLineRow = styled(Grid.Row)({
     marginBottom: "10px",
 
     "&:.last": {
@@ -44,7 +43,7 @@ export default function Index() {
     // Retrieve current year for the footer
     const currentYear = new Date().getFullYear();
 
-    const descriptionLines: JSX.Element[] = [
+    const descriptionLines: ReactElement[] = [
         <>
             Driven by a boundless{" "}
             <b style={{ color: PALETTE.orange["400"] }}>curiosity</b> and a
@@ -68,12 +67,13 @@ export default function Index() {
     return (
         <StyledGrid>
             <StyledRow>
-                <Col>
+                <Grid.Col>
                     <StyledH1>Victor Piolin</StyledH1>
-                </Col>
+                </Grid.Col>
             </StyledRow>
             {descriptionLines.map((line, index) => (
                 <DescriptionLineRow
+                    key={`line-${index}`}
                     className="description-line"
                     style={
                         index + 1 === descriptionLines.length
@@ -81,13 +81,13 @@ export default function Index() {
                             : {}
                     }
                 >
-                    <Col>
+                    <Grid.Col>
                         <XL>{line}</XL>
-                    </Col>
+                    </Grid.Col>
                 </DescriptionLineRow>
             ))}
             <StyledRow className="quote" style={{ fontStyle: "italic" }}>
-                <Col>
+                <Grid.Col>
                     <MD style={{ marginBottom: "10px" }}>
                         Otto von bismarck:{" "}
                     </MD>
@@ -95,10 +95,10 @@ export default function Index() {
                         Fools learn from experience. I prefer to learn from the
                         experience of others.
                     </LG>
-                </Col>
+                </Grid.Col>
             </StyledRow>
             <StyledRow className="social-network">
-                <Col>
+                <Grid.Col>
                     <SocialLink
                         icon={<XIcon style={SVGStyle} />}
                         link="https://twitter.com/VPiolin"
@@ -119,15 +119,15 @@ export default function Index() {
                         link=""
                         label="victor.piolin@gmail.com"
                     />
-                </Col>
+                </Grid.Col>
             </StyledRow>
             <StyledRow className="footer">
-                <Col>
+                <Grid.Col>
                     © {currentYear}{" "}
                     <span style={{ color: PALETTE.orange["400"] }}>
                         Victor Piolin
                     </span>
-                </Col>
+                </Grid.Col>
             </StyledRow>
         </StyledGrid>
     );

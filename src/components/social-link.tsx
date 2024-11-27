@@ -1,10 +1,10 @@
 import { Anchor } from "@zendeskgarden/react-buttons";
 import styled from "styled-components";
-import React from "react";
 import { PALETTE } from "@zendeskgarden/react-theming";
+import { ReactElement } from "react";
 
 interface SocialLinkProps {
-    icon: JSX.Element;
+    icon: ReactElement;
     label: string;
     link?: string;
 }
