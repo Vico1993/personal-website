@@ -9,7 +9,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@zendeskgarden/react-buttons": "^9.5.2",
+        "@zendeskgarden/react-buttons": "^9.6.0",
         "@zendeskgarden/react-grid": "^9.5.2",
         "@zendeskgarden/react-theming": "^9.5.3",
         "@zendeskgarden/react-typography": "^9.6.0",
