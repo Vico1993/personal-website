@@ -12,7 +12,7 @@
         "@zendeskgarden/react-buttons": "^9.7.0",
         "@zendeskgarden/react-grid": "^9.7.0",
         "@zendeskgarden/react-theming": "^9.5.3",
-        "@zendeskgarden/react-typography": "^9.6.0",
+        "@zendeskgarden/react-typography": "^9.7.0",
         "@zendeskgarden/svg-icons": "^7.6.0",
         "localforage": "^1.10.0",
         "match-sorter": "^8.0.2",
