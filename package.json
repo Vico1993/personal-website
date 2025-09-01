@@ -11,7 +11,7 @@
     "dependencies": {
         "@zendeskgarden/react-buttons": "^9.9.0",
         "@zendeskgarden/react-grid": "^9.9.0",
-        "@zendeskgarden/react-theming": "^9.7.1",
+        "@zendeskgarden/react-theming": "^9.11.1",
         "@zendeskgarden/react-typography": "^9.7.1",
         "@zendeskgarden/svg-icons": "^7.6.0",
         "localforage": "^1.10.0",
