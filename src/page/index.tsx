@@ -78,7 +78,10 @@ export function IndexPage() {
                     />
                     <SocialLink
                         icon={
-                            <Mail className="inline-block align-text-top text-orange-400" />
+                            <Mail
+                                className="inline-block align-text-top text-orange-400"
+                                size={16}
+                            />
                         }
                         link=""
                         label="victor.piolin@gmail.com"

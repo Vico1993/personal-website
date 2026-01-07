@@ -21,7 +21,7 @@ export function SocialLink({ icon, label, link }: SocialLinkProps) {
                 )}
             >
                 <a href={link} target="_blank" rel="noopener noreferrer">
-                    {label}
+                    {icon} {label}
                 </a>
             </Button>
         </span>
