@@ -1,28 +1,93 @@
 # Victor Piolin
 
-This repo contain my personal website hosts at [victorpiolin.com](https://www.victorpiolin.com/).
-It's a basic React project
+This repository contains my personal website hosted at [victorpiolin.com](https://www.victorpiolin.com/).
 
-## Basic NPM command
+## Tech Stack
 
-1. Build the project:
+-   **React 18** with **TypeScript** - UI framework
+-   **Vite** - Build tool and dev server
+-   **React Router** - Client-side routing
+-   **Tailwind CSS** - Utility-first CSS framework
+-   **Shadcn UI** - Component library built on Radix UI
+-   **Lucide React** - Icon library
+-   **ESLint** - Code linting
 
-```Shell
-npm run build 
+## Getting Started
+
+### Prerequisites
+
+-   Node.js (v18 or higher recommended)
+-   npm or yarn
+
+### Installation
+
+```bash
+npm install
 ```
 
-2. Dev setup
+## Available Scripts
 
-```Shell
+### Development
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-3. Use eslint:
+The site will be available at `http://localhost:5173`
 
-```Shell
+### Build
+
+Build the project for production:
+
+```bash
+npm run build
+```
+
+The output will be in the `dist` directory.
+
+### Preview
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+### Linting
+
+Run ESLint to check for code issues:
+
+```bash
 npm run lint
 ```
 
-## Edit content
+## Project Structure
 
-For now the content is in [index.tsx](src/page/index.tsx), maybe one day we could use tools like [Contentful](https://www.contentful.com/)
+```
+src/
+├── components/          # Reusable React components
+│   ├── ui/             # Shadcn UI components (Card, Button, etc.)
+│   └── social-link.tsx # Social media link component
+├── lib/                # Utility functions
+│   └── utils.ts        # Helper functions (cn utility for className merging)
+├── page/               # Page components
+│   ├── index.tsx       # Home page
+│   └── error.tsx        # Error page
+├── styles/             # Global styles
+│   └── globals.css     # Tailwind CSS directives and custom styles
+└── main.tsx            # Application entry point
+```
+
+## Edit Content
+
+The main content is currently in [`src/page/index.tsx`](src/page/index.tsx). Future plans include potentially using a headless CMS like [Contentful](https://www.contentful.com/) for content management.
+
+## Styling
+
+This project uses Tailwind CSS with Shadcn UI components. The design system is configured in:
+
+-   `tailwind.config.js` - Tailwind configuration
+-   `src/styles/globals.css` - Global styles and CSS variables
+-   `components.json` - Shadcn UI configuration

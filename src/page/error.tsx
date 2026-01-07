@@ -1,11 +1,7 @@
-import { Link, useRouteError } from "react-router-dom";
+import { Link, useRouteError } from "react-router-dom"
 
-interface IRouterError extends Error {
-    statusText?: string;
-}
-
-export default function Error() {
-    const error = useRouteError() as IRouterError;
+export function ErrorPage() {
+    const error = useRouteError() as RouterError
 
     return (
         <div id="error-page">
@@ -15,5 +11,9 @@ export default function Error() {
             </p>
             <Link to="/">Go back home</Link>
         </div>
-    );
+    )
+}
+
+interface RouterError extends Error {
+    statusText?: string
 }
